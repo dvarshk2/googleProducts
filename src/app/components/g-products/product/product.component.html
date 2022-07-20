@@ -1,0 +1,14 @@
+<div class='gCard'>    
+    <div class="card">
+        <label class="cardLabel p-2" [ngClass]="{'bg-primary' : gProduct.type === 'hardware', 'bg-warning' : gProduct.type === 'app', 'bg-success' : gProduct.type === 'service'}">{{gProduct.type}} </label>
+        <div class="card-body">
+            <h4 class="card-title"> {{gProduct.name}} </h4>
+            <span class="card-subtitle text-muted mb-2">From {{gProduct.dateOpen }} to {{gProduct.dateClose}} </span>
+            <p class="description">
+                {{gProduct.description}}
+            </p>
+            <a class="btn btn-info p-2 text-white" [routerLink]="['/products', gProduct.name]">Details</a>
+        </div>
+    </div>    
+</div>
+<!-- <app-card-product></app-card-product> -->

@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="bg-light text-dark p-4 mb-4">
+          <span class="text-primary">G</span><span class="text-danger">o</span><span class="text-warning">o</span>
+          <span class="text-muted">g</span><span class="text-success">l</span><span class="text-info">e</span>
+           graveyard
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 mb-4">
+        <h3>
+          Products killed by <span class="text-primary">G</span><span class="text-danger">o</span><span class="text-warning">o</span>
+          <span class="text-muted">g</span><span class="text-success">l</span><span class="text-info">e</span>
+        </h3>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-sm-6">
+        <input  type="search" class=".form-control mx-4" placeholder="Search"
+        (keyup)="onSearch(input.value)" #input>
+        <a (click)="onHardware()" href="javascript:;" class="btn btn-primary px-3 mx-2">Hardware</a>
+        <a (click)="onApp()" href="javascript:;" class="btn btn-warning px-3 mx-2">App</a>
+        <a (click)="onService()" href="javascript:;" class="btn btn-success px-3 mx-2">Service</a>
+        
+      </div>
+      <div class="col-sm-3">
+        <select (change)="onSelectHandler(select.value)" #select class="form-control">
+          <option  value="All">All</option>
+          <option  value="hardware">Hardware</option>
+          <option  value="app">App</option>
+          <option  value="service">Service</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 mb-4" *ngFor="let product of products">
+        <app-product [gProduct]="product"></app-product>
+      </div>
+    </div>
+  </div>
